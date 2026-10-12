@@ -1,0 +1,16 @@
+type Paper {
+  id: ID!
+  title: String!
+  abstract: String
+  authors: [String!]!
+  keywords: [String!]!
+  categories: [String!]!
+  categoryKey: String!
+  publicationDate: String
+}
+
+type Query {
+  paper(id: ID!): Paper
+  papers(limit: Int = 50): [Paper!]!
+  papersByCategory(category: String!, limit: Int = 50): [Paper!]!
+}

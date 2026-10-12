@@ -1,0 +1,30 @@
+{
+  "name": "university-papers-assessment",
+  "version": "1.0.0",
+  "description": "Task 2 assessment for Data Engineering",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azrikadir/university-papers-assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/azrikadir/university-papers-assessment/issues"
+  },
+  "homepage": "https://github.com/azrikadir/university-papers-assessment#readme",
+  "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "@as-integrations/express5": "^1.1.2",
+    "@azure/cosmos": "^4.10.1",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "graphql": "^16.14.2"
+  }
+}
