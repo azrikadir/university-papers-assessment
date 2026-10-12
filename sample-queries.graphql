@@ -1,0 +1,32 @@
+# Operation 1: Get a paper by its ID.
+query GetPaperById {
+  paper(id: "5073923") {
+    id
+    title
+    abstract
+    authors
+    keywords
+    categories
+    categoryKey
+    publicationDate
+  }
+}
+
+# Operation 2: Filter papers by category.
+query GetPapersByCategory {
+  papersByCategory(category: "shs.geo", limit: 50) {
+    id
+    title
+    categories
+  }
+}
+
+# Operation 3: Return a list of papers.
+query ListPapers {
+  papers(limit: 50) {
+    id
+    title
+    authors
+    categories
+  }
+}
