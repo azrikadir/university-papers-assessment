@@ -65,6 +65,18 @@ Stored document fields are:
 - `categoryKey`
 - `publicationDate`
 
+### Task 2 — Cosmos DB settings evidence
+
+**Partition key:** the settings show `/id` as the current partition key.
+
+![Cosmos DB partition key set to /id](screenshots/cosmos-partition-key.png)
+
+**Throughput:** the Scale tab shows manual throughput of 400 RU/s.
+The displayed cost is a portal estimate, not proof of an actual charge;
+see the cost controls section for the Free Tier limits and billing checks.
+
+![Cosmos DB manual throughput set to 400 RU/s](screenshots/cosmos-throughput.png)
+
 ## Design choices
 
 ### Python and PySpark
@@ -195,6 +207,18 @@ The HTML page displays paper IDs, titles and categories.
 Express serves the page and `/graphql` from the same origin.
 Paper values are displayed with `textContent`.
 
+### Task 4 — Web UI evidence
+
+**Paper list:** the page reports 50 papers and displays their IDs, titles
+and categories. The screenshot shows the first visible rows.
+
+![Web UI showing 50 papers found](screenshots/ui-paper-list.png)
+
+**Search by ID:** searching for `5073923` returns one paper,
+“Investigating Through Fiction”, with categories `shs.archi` and `shs.geo`.
+
+![Web UI search result for paper 5073923](screenshots/ui-search-id.png)
+
 ## Run the application in GitHub Codespaces
 
 1. Open the repository in GitHub Codespaces.
@@ -257,8 +281,23 @@ SELECT VALUE COUNT(1) FROM c
 ```
 
 ```sql
-SELECT * FROM c WHERE c.id = "5073923"
+SELECT c.id, c.title, c.categories, c.categoryKey
+FROM c
+WHERE c.id = "5073923"
 ```
+
+### Task 2 — Inserted data evidence
+
+**Record count:** the Cosmos DB query returns 50 documents, matching
+the number of records exported from Databricks.
+
+![Cosmos DB count query returning 50](screenshots/cosmos-count-query.png)
+
+**Example paper:** the query retrieves selected fields from the stored
+document for `5073923`, including its title, categories and categoryKey.
+This screenshot shows a projection of the document, rather than all fields.
+
+![Cosmos DB query result for paper 5073923](screenshots/cosmos-paper-5073923.png)
 
 ## Cost controls
 
