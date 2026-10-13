@@ -164,13 +164,6 @@ would also need the categoryKey to perform a point read.
 In addition, a paper can have multiple categories, while
 categoryKey stores only the first source-listed category.
 
-**Trade-off:** listing papers and filtering by category require
-cross-partition queries with the chosen `/id` partition key.
-This is acceptable for the 50-document assessment sample.
-For a larger application dominated by category searches, I
-would reassess the partition strategy using the expected
-workload and measured request-unit consumption.
-
 The `categoryKey` field remains in each document as a convenience
 field, but it is not the container's partition key. It represents
 the first source-listed category, not a verified primary category.
