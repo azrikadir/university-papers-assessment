@@ -72,8 +72,7 @@ Stored document fields are:
 ![Cosmos DB partition key set to /id](screenshots/cosmos-partition-key.png)
 
 **Throughput:** the Scale tab shows manual throughput of 400 RU/s.
-The displayed cost is a portal estimate, not proof of an actual charge;
-see the cost controls section for the Free Tier limits and billing checks.
+The displayed cost is a portal estimate, not proof of an actual charge.
 
 ![Cosmos DB manual throughput set to 400 RU/s](screenshots/cosmos-throughput.png)
 
